@@ -44,12 +44,12 @@ export function logger(req: Request, res: Response, next: () => any) {
     )} \n  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
   `;
   // 根据状态码，进行日志类型区分
-  if (code >= 500) {
-    Logger.error(logFormat);
-  } else if (code >= 400) {
-    Logger.warn(logFormat);
-  } else {
-    Logger.access(logFormat);
-    Logger.log(logFormat);
-  }
+  // if (code >= 500) {
+  //   Logger.error(logFormat);
+  // } else if (code >= 400) {
+  //   Logger.warn(logFormat);
+  // } else {
+  //   Logger.access(logFormat);
+  //   Logger.log(logFormat);
+  // }
 }
