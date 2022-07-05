@@ -2,7 +2,7 @@
  * @Author: Kang
  * @Date: 2022-07-03 13:34:15
  * @Last Modified by: Kang
- * @LastEditTime: 2022-07-04 23:13:54
+ * @LastEditTime: 2022-07-05 22:19:21
  */
 import { join } from 'path';
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
