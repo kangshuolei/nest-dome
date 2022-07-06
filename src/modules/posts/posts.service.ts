@@ -2,7 +2,7 @@
  * @Author: Kang
  * @Date: 2022-07-02 15:28:24
  * @Last Modified by: Kang
- * @LastEditTime: 2022-07-03 22:17:47
+ * @LastEditTime: 2022-07-06 09:17:51
  */
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
@@ -16,8 +16,9 @@ export class PostsService {
     private postsModel: Repository<Posts>,
   ) {}
 
-  async findAll(): Promise<Posts[]> {
-    return this.postsModel.find();
+  async findAll(): Promise<any> {
+    // return this.postsModel.find();
+    return '123';
   }
   async create(createPostsDto): Promise<Posts[]> {
     return createPostsDto;

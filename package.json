@@ -27,7 +27,7 @@
     "@nestjs/jwt": "^8.0.1",
     "@nestjs/mapped-types": "*",
     "@nestjs/passport": "^8.2.2",
-    "@nestjs/platform-express": "^8.0.0",
+    "@nestjs/platform-express": "^8.4.7",
     "@nestjs/sequelize": "^8.0.1",
     "@nestjs/typeorm": "^8.1.4",
     "class-transformer": "^0.5.1",

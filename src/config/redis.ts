@@ -2,10 +2,11 @@
  * @Author: Kang
  * @Date: 2022-07-03 13:34:15
  * @Last Modified by: Kang
- * @LastEditTime: 2022-07-05 23:05:05
+ * @LastEditTime: 2022-07-06 08:48:06
  */
 import { join } from 'path';
 import { RedisModuleOptions } from 'nestjs-redis';
+
 const devDatabase: RedisModuleOptions = {
   host: '127.0.0.1',
   port: 6379,
