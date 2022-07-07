@@ -2,7 +2,7 @@
  * @Author: Kang
  * @Date: 2022-07-06 11:41:12
  * @Last Modified by: Kang
- * @LastEditTime: 2022-07-06 21:32:13
+ * @LastEditTime: 2022-07-07 21:22:20
  */
 import { Module } from '@nestjs/common';
 import { UploadService } from './upload.service';
@@ -19,10 +19,10 @@ const dirName = formatTime(new Date());
 // 指定上传路径
 const uploadBasePath = '../../../upload';
 // 文件重命名
-const dir = join(__dirname, uploadBasePath, dirName);
+const dir = join(__dirname, uploadBasePath);
 // const src = path.join(__dirname, uploadBasePath, dirName, filename);
 // 判断是否存在该文件夹，不存在则创建。
-if (!fs.existsSync(dir)) fs.mkdirSync(dir);
+// if (!fs.existsSync(dir)) fs.mkdirSync(dir);
 
 @Module({
   imports: [
@@ -30,7 +30,7 @@ if (!fs.existsSync(dir)) fs.mkdirSync(dir);
       imports: [ConfigModule],
       useFactory: async (configService: ConfigService) => ({
         storage: diskStorage({
-          destination: join(__dirname, '../../../upload', dirName),
+          destination: join(__dirname, '../../../upload'),
           filename: (req, file, cb) => {
             const filename = `${getUUID()}.${file.mimetype.split('/')[1]}`;
             return cb(null, filename);
