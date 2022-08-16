@@ -2,7 +2,7 @@
  * @Author: Kang
  * @Date: 2022-07-05 09:14:16
  * @Last Modified by: Kang
- * @LastEditTime: 2022-07-06 09:55:31
+ * @LastEditTime: 2022-08-13 15:32:14
  */
 import { Injectable } from '@nestjs/common';
 import { UsersService } from '../users/users.service';
@@ -65,11 +65,8 @@ export class AuthService {
       //将用户信息和token存入redis，并设置失效时间，语法：[key,seconds, value]
       await redis.setex(`${user.userId}-${user.username}`, 3600, `${token}`);
       return {
-        code: 200,
-        data: {
-          token,
-        },
-        msg: `登录成功`,
+        token,
+        userInfo: user,
       };
     } catch (error) {
       console.log(error);

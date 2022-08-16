@@ -2,7 +2,7 @@
  * @Author: Kang
  * @Date: 2022-07-02 15:04:46
  * @Last Modified by: Kang
- * @LastEditTime: 2022-07-03 23:40:53
+ * @LastEditTime: 2022-08-13 15:24:52
  */
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
@@ -10,6 +10,7 @@ import { ValidationPipe } from './interceptor/transform.interceptor';
 import { AllExceptionsFilter } from './filter/any-exception.filter';
 import { HttpExceptionFilter } from './filter/http-exception.filter';
 import { logger } from './middleware/logger.middleware';
+import { HttpReqTransformInterceptor } from './interceptor/http-req.interceptor';
 // import { ValidationPipe } from '@nestjs/common';
 
 async function bootstrap() {
@@ -24,6 +25,8 @@ async function bootstrap() {
   app.useGlobalFilters(new HttpExceptionFilter()); // 全局统一异常返回体
 
   app.useGlobalPipes(new ValidationPipe());
+
+  app.useGlobalInterceptors(new HttpReqTransformInterceptor());
 
   await app.listen(3000);
 }

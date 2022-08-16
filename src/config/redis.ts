@@ -2,23 +2,23 @@
  * @Author: Kang
  * @Date: 2022-07-03 13:34:15
  * @Last Modified by: Kang
- * @LastEditTime: 2022-07-06 08:48:06
+ * @LastEditTime: 2022-08-08 21:14:54
  */
 import { join } from 'path';
 import { RedisModuleOptions } from 'nestjs-redis';
 
 const devDatabase: RedisModuleOptions = {
-  host: '127.0.0.1',
-  port: 6379,
-  username: 'root',
-  password: '123456',
+  host: '49.233.199.152',
+  port: 6079,
+  username: '',
+  password: '',
   db: 0,
 };
 const productDatabase: RedisModuleOptions = {
-  host: '127.0.0.1',
-  port: 6379,
-  username: 'root',
-  password: '123456',
+  host: '49.233.199.152',
+  port: 6079,
+  username: '',
+  password: '',
   db: 0,
 };
 

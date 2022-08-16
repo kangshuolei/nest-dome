@@ -2,7 +2,7 @@
  * @Author: Kang
  * @Date: 2022-07-03 22:56:36
  * @Last Modified by: Kang
- * @LastEditTime: 2022-07-03 22:59:22
+ * @LastEditTime: 2022-08-14 22:49:18
  */
 import {
   Injectable,
@@ -14,7 +14,7 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 export interface Response<T> {
-  data: T;
+  result: T;
 }
 
 @Injectable()
@@ -25,10 +25,13 @@ export class HttpReqTransformInterceptor<T>
     context: ExecutionContext,
     next: CallHandler,
   ): Observable<Response<T>> {
-    return next
-      .handle()
-      .pipe(
-        map((data) => ({ data, code: 200, msg: '操作成功', success: true })),
-      );
+    return next.handle().pipe(
+      map((data) => ({
+        result: data,
+        code: 200,
+        msg: '操作成功',
+        success: true,
+      })),
+    );
   }
 }
